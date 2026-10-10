@@ -1,0 +1,134 @@
+@import "tailwindcss";
+
+@theme {
+  --font-display: var(--font-inter-tight), -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --font-body: var(--font-inter), -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --font-inter-tight: var(--font-inter-tight), sans-serif;
+  --font-inter: var(--font-inter), sans-serif;
+  --font-space-grotesk: var(--font-inter-tight), sans-serif;
+  --font-manrope: var(--font-inter), sans-serif;
+
+  --color-canvas: #F4F6F3;
+  --color-canvas-alt: #E9EDE8;
+  --color-surface: #FFFFFF;
+  --color-ink: #111A22;
+  --color-ink-soft: #34424D;
+  --color-ink-muted: #596772;
+  --color-signal: #D6F36A;
+  --color-signal-hover: #C5E45A;
+  --color-signal-pressed: #B4D54B;
+  --color-dark: #111A22;
+  --color-dark-raised: #1A2731;
+  --color-dark-line: #35434C;
+  --color-border: #D4DBD6;
+  --color-border-strong: #AAB6AE;
+  --color-link: #245B49;
+  --color-focus: #245B49;
+  --color-success: #216747;
+  --color-warning: #855710;
+  --color-error: #A52E32;
+}
+
+:root {
+  --color-canvas: #F4F6F3;
+  --color-canvas-alt: #E9EDE8;
+  --color-surface: #FFFFFF;
+  --color-ink: #111A22;
+  --color-ink-soft: #34424D;
+  --color-ink-muted: #596772;
+  --color-signal: #D6F36A;
+  --color-signal-hover: #C5E45A;
+  --color-signal-pressed: #B4D54B;
+  --color-dark: #111A22;
+  --color-dark-raised: #1A2731;
+  --color-dark-line: #35434C;
+  --color-border: #D4DBD6;
+  --color-border-strong: #AAB6AE;
+  --color-link: #245B49;
+  --color-focus: #245B49;
+  --color-success: #216747;
+  --color-warning: #855710;
+  --color-error: #A52E32;
+
+  /* Spatial Liquid Glass System */
+  --glass-ambient-bg: rgba(17, 26, 34, 0.20);
+  --glass-surface-bg: rgba(17, 26, 34, 0.36);
+  --glass-elevated-bg: rgba(17, 26, 34, 0.58);
+  --glass-border: rgba(255, 255, 255, 0.08);
+  --glass-border-subtle: rgba(255, 255, 255, 0.05);
+  --glass-border-highlight: rgba(255, 255, 255, 0.18);
+  --glass-inner-specular: inset 0 1px 0 0 rgba(255, 255, 255, 0.14);
+  --glass-shadow-soft: 0 16px 36px -10px rgba(0, 0, 0, 0.45);
+  --glass-shadow-elevated: 0 24px 50px -12px rgba(0, 0, 0, 0.65), 0 0 0 1px rgba(255, 255, 255, 0.06);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--color-ink);
+  color: #FFFFFF;
+  font-family: var(--font-inter), sans-serif;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Glass Surface Utility Classes */
+.glass-ambient {
+  background: var(--glass-ambient-bg);
+  backdrop-filter: blur(14px) saturate(135%);
+  -webkit-backdrop-filter: blur(14px) saturate(135%);
+  border: 1px solid var(--glass-border-subtle);
+}
+
+.glass-panel {
+  background: var(--glass-surface-bg);
+  backdrop-filter: blur(18px) saturate(140%);
+  -webkit-backdrop-filter: blur(18px) saturate(140%);
+  border: 1px solid var(--glass-border);
+  border-top-color: var(--glass-border-highlight);
+  box-shadow: var(--glass-inner-specular), var(--glass-shadow-soft);
+}
+
+.glass-elevated {
+  background: var(--glass-elevated-bg);
+  backdrop-filter: blur(24px) saturate(155%);
+  -webkit-backdrop-filter: blur(24px) saturate(155%);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-top-color: rgba(255, 255, 255, 0.24);
+  box-shadow: inset 0 1px 0 0 rgba(255, 255, 255, 0.20), var(--glass-shadow-elevated);
+}
+
+.glass-pill {
+  background: rgba(17, 26, 34, 0.32);
+  backdrop-filter: blur(12px) saturate(130%);
+  -webkit-backdrop-filter: blur(12px) saturate(130%);
+  border: 1px solid rgba(255, 255, 255, 0.09);
+  border-top-color: rgba(255, 255, 255, 0.18);
+  box-shadow: inset 0 1px 0 0 rgba(255, 255, 255, 0.12);
+}
+
+.glass-subtle {
+  background: rgba(17, 26, 34, 0.22);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-top-color: rgba(255, 255, 255, 0.12);
+}
+
+/* Reduced transparency support */
+@media (prefers-reduced-transparency: reduce) {
+  .glass-ambient,
+  .glass-panel,
+  .glass-elevated,
+  .glass-pill,
+  .glass-subtle {
+    background-color: #16222C !important;
+    backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important;
+  }
+}
+
+
