@@ -113,6 +113,17 @@ Example token block for a CSS-first project (adapt to the current styling archit
   --color-success: #216747;
   --color-warning: #855710;
   --color-error: #A52E32;
+
+  /* Spatial Liquid Glass System */
+  --glass-ambient-bg: rgba(17, 26, 34, 0.20);
+  --glass-surface-bg: rgba(17, 26, 34, 0.36);
+  --glass-elevated-bg: rgba(17, 26, 34, 0.58);
+  --glass-border: rgba(255, 255, 255, 0.08);
+  --glass-border-subtle: rgba(255, 255, 255, 0.05);
+  --glass-border-highlight: rgba(255, 255, 255, 0.18);
+  --glass-inner-specular: inset 0 1px 0 0 rgba(255, 255, 255, 0.14);
+  --glass-shadow-soft: 0 16px 36px -10px rgba(0, 0, 0, 0.45);
+  --glass-shadow-elevated: 0 24px 50px -12px rgba(0, 0, 0, 0.65), 0 0 0 1px rgba(255, 255, 255, 0.06);
 }
 ```
 
@@ -120,19 +131,19 @@ Example token block for a CSS-first project (adapt to the current styling archit
 
 ## 4. Typography — Google Fonts Only
 
-Use Google Fonts only. Prefer `next/font/google` when supported by the installed Next.js version and deployment environment. Load only weights used by the design.
+Use Google Fonts only via `next/font/google`. Load only weights used by the design.
 
-### Approved font pairing
+### Approved font pairing (Premium Spatial Redesign)
 
-- **Space Grotesk:** hero display and section headings. Gives the brand a contemporary geometric character without sci-fi typography.
-- **Manrope:** navigation, buttons, labels, form controls, body copy, answer content and source metadata.
+- **Inter Tight:** hero display and section headings. Gives the brand a precise, compact, contemporary editorial character.
+- **Inter:** navigation, buttons, labels, form controls, body copy, answer content, and source metadata. Highly legible and institutional.
 
 Do not add a third font family. Keep system fallbacks if Google Font loading fails.
 
 ### Weights
 
-- Space Grotesk: 400, 500, 600, 700 only as needed.
-- Manrope: 400, 500, 600, 700 only as needed.
+- Inter Tight: 400, 500, 600, 700 only as needed.
+- Inter: 400, 500, 600, 700 only as needed.
 
 Avoid ultra-bold display text everywhere and avoid making every paragraph medium weight.
 
@@ -149,7 +160,7 @@ Avoid ultra-bold display text everywhere and avoid making every paragraph medium
 | Controls/labels | 14–16px | 14–16px | 1.4–1.5 |
 | Metadata | 12–13px | 12–13px | 1.4–1.5 |
 
-Hero/section headings use Space Grotesk 500–600; body/UI uses Manrope 400–600. Use `clamp()` for responsive display type. Keep reading line lengths around 60–75 characters. Use sentence case, subtle tracking only for small labels, and real HTML for all meaningful text. Never bake interface text into the 3D render.
+Hero/section headings use Inter Tight 500–600; body/UI uses Inter 400–600. Use `clamp()` for responsive display type. Keep reading line lengths around 60–75 characters. Use sentence case, subtle tracking only for small labels, and real HTML for all meaningful text. Never bake interface text into the 3D render.
 
 ---
 

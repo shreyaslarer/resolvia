@@ -120,41 +120,42 @@ export function QuerySection() {
   return (
     <section
       id="query-section"
-      className="py-24 sm:py-32 relative text-white border-t border-[#35434C]/30"
+      className="py-24 sm:py-32 relative text-white border-t border-white/[0.06]"
       aria-label="Institutional Resolution Engine"
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Section Header */}
-        <div className="max-w-3xl mb-12 p-6 sm:p-7 rounded-2xl bg-[#111A22]/40 border border-[#35434C]/40 backdrop-blur-xs shadow-lg">
-          <span className="text-xs font-mono uppercase tracking-widest text-[var(--color-signal)] font-semibold block mb-2">
-            Resolution Engine
-          </span>
+        {/* Editorial Section Header — Unboxed & Spatially Integrated */}
+        <div className="max-w-3xl mb-10 space-y-3">
+          <div className="inline-flex items-center gap-2 px-3.5 py-1 text-xs font-mono text-slate-200 glass-pill rounded-full">
+            <span className="w-1.5 h-1.5 rounded-full bg-[var(--color-signal)] shadow-[0_0_6px_rgba(214,243,106,0.6)]" />
+            <span>Resolution Engine</span>
+          </div>
           <h2 className="text-3xl sm:text-5xl font-semibold tracking-tight font-display text-white leading-tight">
             What do you need help with?
           </h2>
-          <p className="mt-3 text-base sm:text-lg text-[#CBD5E1] font-body leading-relaxed">
-            Ask in your own words. Resolvia connects your inquiry directly to the governing
-            university notification and delivers a verified next step.
+          <p className="text-base sm:text-lg text-slate-300/90 font-body leading-relaxed max-w-[62ch]">
+            Ask in your own words. Resolvia connects your inquiry directly to governing
+            university notifications and delivers a verified next step.
           </p>
         </div>
 
-        {/* Search & Natural Language Input — Translucent & Responsive */}
-        <form onSubmit={handleSubmit} className="mb-8">
-          <div className="relative flex flex-col sm:flex-row items-stretch gap-3 p-2 bg-[#111A22]/40 border border-[#35434C]/70 focus-within:border-[var(--color-signal)] focus-within:ring-2 focus-within:ring-[var(--color-signal)]/20 rounded-xl shadow-lg transition-all backdrop-blur-xs">
-            <div className="flex items-center pl-3 text-[#94A3B8] flex-1">
-              <Search className="w-5 h-5 mr-3 shrink-0 text-[#94A3B8]" />
+        {/* Elevated Liquid Glass Composer */}
+        <form onSubmit={handleSubmit} className="mb-6">
+          <div className="relative flex flex-col sm:flex-row items-stretch gap-2.5 p-2 rounded-2xl glass-elevated focus-within:border-[var(--color-signal)]/60 focus-within:ring-2 focus-within:ring-[var(--color-signal)]/20 transition-all">
+            <div className="flex items-center pl-3.5 text-slate-400 flex-1">
+              <Search className="w-5 h-5 mr-3 shrink-0 text-slate-400" />
               <input
                 type="text"
                 value={inputVal}
                 onChange={(e) => setInputVal(e.target.value)}
                 placeholder="Ask about revaluation fees, attendance criteria, carry-over credits..."
-                className="w-full py-2.5 text-base sm:text-lg text-white placeholder:text-[#94A3B8] bg-transparent focus:outline-hidden font-body"
+                className="w-full py-3 text-base sm:text-lg text-white placeholder:text-slate-400 bg-transparent focus:outline-hidden font-body"
                 aria-label="Ask your institutional question"
               />
             </div>
             <button
               type="submit"
-              className="inline-flex items-center justify-center gap-2 px-6 py-3.5 text-sm sm:text-base font-semibold rounded-lg bg-[var(--color-signal)] text-[var(--color-ink)] hover:bg-[var(--color-signal-hover)] active:bg-[var(--color-signal-pressed)] transition-all cursor-pointer focus-visible:outline-2 focus-visible:outline-[var(--color-signal)]"
+              className="inline-flex items-center justify-center gap-2 px-6 py-3.5 text-sm sm:text-base font-semibold rounded-xl bg-[var(--color-signal)] text-[var(--color-ink)] hover:bg-[var(--color-signal-hover)] active:scale-[0.98] transition-all cursor-pointer shadow-[0_2px_14px_rgba(214,243,106,0.2)] focus-visible:outline-2 focus-visible:outline-[var(--color-signal)]"
             >
               <span>Resolve inquiry</span>
               <ArrowRight className="w-4 h-4" />
@@ -162,10 +163,10 @@ export function QuerySection() {
           </div>
         </form>
 
-        {/* Suggestion Prompts — Lightweight Translucent Chips */}
-        <div className="mb-12">
-          <span className="inline-block px-2.5 py-1 text-xs font-mono uppercase tracking-wider text-[#CBD5E1] bg-[#111A22]/50 border border-[#35434C]/40 rounded mb-2.5 backdrop-blur-xs">
-            Sample Inquiries (Click to Inspect Demonstration):
+        {/* Suggestion Prompts — Lightweight Spatial Pills */}
+        <div className="mb-12 space-y-2.5">
+          <span className="text-xs font-mono text-slate-400 block tracking-wider uppercase">
+            Sample Inquiries (Click to inspect demonstration):
           </span>
           <div className="flex flex-wrap gap-2.5">
             {SAMPLE_QUERIES.map((sq) => (
@@ -173,10 +174,10 @@ export function QuerySection() {
                 key={sq.id}
                 type="button"
                 onClick={() => handleSelectSample(sq)}
-                className={`text-xs sm:text-sm px-3.5 py-1.5 rounded-md border text-left transition-all cursor-pointer font-medium focus-visible:outline-2 focus-visible:outline-[var(--color-signal)] ${
+                className={`text-xs sm:text-sm px-4 py-2 rounded-xl transition-all cursor-pointer font-medium focus-visible:outline-2 focus-visible:outline-[var(--color-signal)] ${
                   selectedQuery.id === sq.id
-                    ? "bg-[var(--color-signal)] text-[var(--color-ink)] border-[var(--color-signal)] font-semibold"
-                    : "bg-[#111A22]/25 text-[#CBD5E1] border-[#35434C]/50 hover:bg-[#111A22]/50 hover:text-white"
+                    ? "bg-[var(--color-signal)] text-[var(--color-ink)] font-semibold shadow-[0_2px_12px_rgba(214,243,106,0.22)]"
+                    : "glass-pill text-slate-300 hover:text-white hover:bg-white/[0.08]"
                 }`}
               >
                 {sq.query}
@@ -185,22 +186,22 @@ export function QuerySection() {
           </div>
         </div>
 
-        {/* Resolution Demonstration Canvas — Editorial Translucent Layout */}
+        {/* Resolution Demonstration Canvas — Editorial Glass Panel */}
         {isResolved && (
-          <div className="bg-[#111A22]/35 border border-[#35434C]/50 backdrop-blur-xs rounded-2xl p-6 sm:p-8 shadow-xl space-y-6 animate-in fade-in duration-300">
+          <div className="glass-panel rounded-3xl p-6 sm:p-9 shadow-[0_24px_64px_-16px_rgba(0,0,0,0.6)] space-y-8 animate-in fade-in duration-300">
             {/* Header / Scheme Badge */}
-            <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 border-b border-[#35434C]/40 pb-5">
-              <div>
-                <span className="inline-flex items-center gap-1.5 px-2.5 py-1 text-xs font-mono uppercase tracking-wider bg-[#111A22]/40 text-[var(--color-signal)] border border-[#35434C]/50 rounded font-medium">
+            <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 border-b border-white/[0.08] pb-6">
+              <div className="space-y-2">
+                <span className="inline-flex items-center gap-1.5 px-3 py-1 text-xs font-mono text-[var(--color-signal)] glass-pill rounded-full font-medium">
                   <BookmarkCheck className="w-3.5 h-3.5" />
                   {selectedQuery.scheme}
                 </span>
-                <h3 className="mt-2 text-2xl sm:text-3xl font-semibold font-display text-white">
+                <h3 className="text-2xl sm:text-3xl font-semibold font-display text-white">
                   {selectedQuery.title}
                 </h3>
               </div>
-              <div className="text-xs font-mono text-[#94A3B8] text-left sm:text-right">
-                <span className="inline-block px-2.5 py-1 bg-[#111A22]/40 border border-[#35434C]/50 rounded text-[#CBD5E1]">
+              <div className="text-xs font-mono text-slate-400 text-left sm:text-right">
+                <span className="inline-block px-3 py-1.5 bg-white/[0.03] border border-white/[0.07] rounded-lg text-slate-300">
                   Illustrative Example · Official VTU Statute Attribution
                 </span>
               </div>
@@ -208,43 +209,43 @@ export function QuerySection() {
 
             {/* Plain-Language Explanation */}
             <div className="space-y-2">
-              <h4 className="text-xs font-mono uppercase tracking-wider text-[#94A3B8]">
+              <h4 className="text-xs font-mono uppercase tracking-wider text-slate-400">
                 Synthesized Plain-Language Explanation
               </h4>
-              <p className="text-base sm:text-lg text-[#E2E8F0] leading-relaxed font-body">
+              <p className="text-base sm:text-lg text-slate-100 leading-relaxed font-body max-w-[75ch]">
                 {selectedQuery.summary}
               </p>
             </div>
 
             {/* Two Column Layout: Actionable Steps vs Official Evidence Source */}
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 pt-2">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 pt-2">
               {/* Practical Next Steps */}
-              <div className="space-y-4 p-5 sm:p-6 bg-[#111A22]/25 border border-[#35434C]/40 rounded-xl">
-                <h4 className="text-sm font-mono uppercase tracking-wider text-white font-semibold flex items-center gap-2">
+              <div className="space-y-4">
+                <h4 className="text-sm font-semibold font-display text-white tracking-wide flex items-center gap-2">
                   <CheckCircle2 className="w-4 h-4 text-[var(--color-signal)]" />
-                  Verified Next Action Steps (Illustrative Checklist)
+                  <span>Practical Next Action Steps (Illustrative Checklist)</span>
                 </h4>
-                <ol className="space-y-3 font-body text-sm text-[#CBD5E1]">
+                <ol className="space-y-2.5 font-body text-sm text-slate-200">
                   {selectedQuery.steps.map((step, idx) => (
-                    <li key={idx} className="flex items-start gap-3">
-                      <span className="shrink-0 w-5 h-5 rounded-full bg-[#111A22]/60 border border-[#35434C]/60 text-xs font-mono font-semibold flex items-center justify-center text-white">
+                    <li key={idx} className="flex items-start gap-3.5 p-3 rounded-xl bg-white/[0.02] border border-white/[0.05] hover:bg-white/[0.04] transition-colors">
+                      <span className="shrink-0 w-6 h-6 rounded-full bg-white/[0.06] border border-white/[0.1] text-xs font-mono font-semibold flex items-center justify-center text-[var(--color-signal)]">
                         {idx + 1}
                       </span>
-                      <span className="leading-snug">{step}</span>
+                      <span className="leading-relaxed text-slate-200">{step}</span>
                     </li>
                   ))}
                 </ol>
               </div>
 
               {/* Official Source Attributions Card */}
-              <div className="space-y-4 p-5 sm:p-6 bg-[#111A22]/30 text-white border border-[#35434C]/40 rounded-xl flex flex-col justify-between">
-                <div className="space-y-3">
+              <div className="glass-ambient rounded-2xl p-6 border border-white/[0.09] flex flex-col justify-between space-y-5">
+                <div className="space-y-3.5">
                   <div className="flex items-center justify-between">
-                    <span className="inline-flex items-center gap-1.5 text-xs font-mono uppercase tracking-wider text-[var(--color-signal)]">
+                    <span className="inline-flex items-center gap-1.5 text-xs font-mono text-[var(--color-signal)]">
                       <FileText className="w-4 h-4" />
                       Official Institutional Authority
                     </span>
-                    <span className="text-[11px] font-mono text-[#94A3B8]">
+                    <span className="text-xs font-mono text-slate-400">
                       VTU Belagavi
                     </span>
                   </div>
@@ -253,32 +254,32 @@ export function QuerySection() {
                     {selectedQuery.officialSource.title}
                   </h5>
 
-                  <div className="space-y-1.5 text-xs font-mono text-[#CBD5E1] pt-1">
+                  <div className="space-y-2 text-xs font-mono text-slate-300 pt-1">
                     <p>
-                      <span className="text-[#94A3B8]">Ref No:</span>{" "}
+                      <span className="text-slate-400">Ref No:</span>{" "}
                       {selectedQuery.officialSource.refNo}
                     </p>
                     <p>
-                      <span className="text-[#94A3B8]">Issued Date:</span>{" "}
+                      <span className="text-slate-400">Issued Date:</span>{" "}
                       {selectedQuery.officialSource.issueDate}
                     </p>
                     <p>
-                      <span className="text-[#94A3B8]">Issuing Office:</span>{" "}
+                      <span className="text-slate-400">Issuing Office:</span>{" "}
                       {selectedQuery.officialSource.authority}
                     </p>
-                    <p className="text-[var(--color-signal)] pt-1 border-t border-[#35434C]/40">
+                    <div className="p-3 rounded-xl bg-[var(--color-signal)]/10 border border-[var(--color-signal)]/25 text-[var(--color-signal)]">
                       {selectedQuery.officialSource.clause}
-                    </p>
+                    </div>
                   </div>
                 </div>
 
-                <div className="pt-4 border-t border-[#35434C]/40 flex items-center justify-between text-xs font-mono">
-                  <span className="text-[#94A3B8]">Independent Source Verification</span>
+                <div className="pt-4 border-t border-white/[0.08] flex items-center justify-between text-xs font-mono">
+                  <span className="text-slate-400">Independent Source Verification</span>
                   <a
                     href="https://vtu.ac.in"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex items-center gap-1 text-[var(--color-signal)] hover:underline focus-visible:outline-2 focus-visible:outline-[var(--color-signal)]"
+                    className="inline-flex items-center gap-1.5 text-[var(--color-signal)] hover:underline focus-visible:outline-2 focus-visible:outline-[var(--color-signal)]"
                   >
                     <span>View University Gazette</span>
                     <ExternalLink className="w-3.5 h-3.5" />
@@ -288,8 +289,8 @@ export function QuerySection() {
             </div>
 
             {/* Disclaimer & Transparency Note */}
-            <div className="pt-3 border-t border-[#35434C]/40 flex items-start gap-3 text-xs text-[#94A3B8] font-mono">
-              <ShieldAlert className="w-4 h-4 text-[#D6F36A] shrink-0 mt-0.5" />
+            <div className="pt-4 border-t border-white/[0.08] flex items-start gap-3 text-xs text-slate-400 font-mono leading-relaxed">
+              <ShieldAlert className="w-4 h-4 text-[var(--color-signal)] shrink-0 mt-0.5" />
               <span>
                 Demonstration Notice: Resolvia explains institutional information. The issuing
                 university remains the sole governing authority. Verify all individual dates and fee
